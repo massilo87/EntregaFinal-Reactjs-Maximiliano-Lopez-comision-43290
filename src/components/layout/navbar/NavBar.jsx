@@ -12,8 +12,8 @@ const NavBar = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar sx={{bgcolor: '#b1b1b1bd'}}>
-          <img className="logoBrand" src={logoBrand} alt="logo-brand" />
+        <Toolbar sx={{ bgcolor: '#b1b1b1bd' }}>
+          <img className="logoBrand" src={ logoBrand } alt="logo-brand" />
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Impresiones 3D
           </Typography>

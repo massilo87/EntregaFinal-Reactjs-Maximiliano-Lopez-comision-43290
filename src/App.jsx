@@ -10,7 +10,7 @@ function App() {
     
       <div>
         <NavBar />
-        <ItemListContainer greeting={'Tienda de impresiones 3d de filamento'} />
+        <ItemListContainer greeting={ 'Tienda de impresiones 3d de filamento' } />
       </div>
    
   )
