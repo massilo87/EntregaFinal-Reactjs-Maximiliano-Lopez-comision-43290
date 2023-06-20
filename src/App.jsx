@@ -1,10 +1,19 @@
 
+import ItemListContainer from "./components/itemListContainer/ItemListContainer";
+import NavBar from "./components/layout/navbar/NavBar";
+
+
 
 function App() {
 
   return (
-    <h1>hola mundo!</h1>
+    
+      <div>
+        <NavBar />
+        <ItemListContainer greeting={'Tienda de impresiones 3d de filamento'} />
+      </div>
+   
   )
-}
+};
 
-export default App
+export default App;
