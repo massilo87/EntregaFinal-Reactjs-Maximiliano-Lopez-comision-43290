@@ -1,8 +1,13 @@
+import CounterContainer from "../../common/counter/CounterContainer"
 
 
 const ItemDetail = () => {
   return (
-    <div>ItemDetail</div>
+    <div>
+        <h1>aca van los detalles del producto</h1>
+         <CounterContainer />
+    </div>
+   
   )
 }
 
