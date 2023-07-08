@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 const ProductCard = ({ item }) => {
   return (
     <Card sx={{ width: 250 }}>
-      <CardMedia sx={{ height: 150 }} image={item.img} title="green iguana" />
+      <CardMedia sx={{ height: 150 }} image={item.img} title="imagen" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {item.title}
