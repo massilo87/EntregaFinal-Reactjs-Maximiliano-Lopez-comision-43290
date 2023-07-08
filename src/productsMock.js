@@ -56,7 +56,7 @@ export const products = [
   },
   {
     id: 7,
-    title: "Llaveros",
+    title: "Llaveros premium",
     price: 400,
     stock: 10,
     description: "Llaveros impresos en colores.",
