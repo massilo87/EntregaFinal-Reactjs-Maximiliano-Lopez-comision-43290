@@ -1,14 +1,20 @@
-import CounterContainer from "../../common/counter/CounterContainer"
+import CounterContainer from "../../common/counter/CounterContainer";
+import "./ItemDetail.css";
 
-
-const ItemDetail = () => {
+const ItemDetail = ({ product, agregarALCarrito }) => {
   return (
-    <div>
-        <h1>aca van los detalles del producto</h1>
-         <CounterContainer />
-    </div>
-   
-  )
-}
+    <div className="detail">
+      <img src={product.img} />
+      <h2>{product.title}</h2>
+      <h4>{product.description}</h4>
+      <h3>${product.price}</h3>
 
-export default ItemDetail
+      <CounterContainer
+        stock={product.stock}
+        agregarALCarrito={agregarALCarrito}
+      />
+    </div>
+  );
+};
+
+export default ItemDetail;
