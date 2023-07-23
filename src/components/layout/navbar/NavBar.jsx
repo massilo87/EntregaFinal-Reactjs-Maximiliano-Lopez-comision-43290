@@ -6,7 +6,6 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import CartWidget from "../../common/cartWidget/CartWidget";
-import logoBrand from "./logo.png";
 import { Link, Outlet } from "react-router-dom";
 
 const NavBar = () => {
@@ -15,7 +14,7 @@ const NavBar = () => {
       <AppBar position="static">
         <Toolbar sx={{ bgcolor: "#b1b1b1bd" }}>
           <Link to="/">
-            <img className="logoBrand" src={logoBrand} alt="logo-brand" />
+            <img className="logoBrand" src="https://res.cloudinary.com/dwiiarrki/image/upload/v1690130278/logo_drjkzi.png" alt="logo-brand" />
           </Link>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Impresiones 3D
