@@ -1,13 +1,19 @@
 import { Badge } from "@mui/material";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../../context/CartContext";
+
 
 const CartWidget = () => {
+
+    const { cart } = useContext(CartContext)
     return (
-        <div>
-            <Badge badgeContent={8} color="warning">
+        <Link to="/cart">
+            <Badge badgeContent={cart.length} color="warning" showZero>
                 <ShoppingCartIcon color="action" />
             </Badge>
-        </div>
+        </Link>
     )
 };
 

@@ -1,14 +1,14 @@
 import { Route, Routes } from "react-router"
-import NavBar from "../components/layout/navbar/NavBar"
 import { routes } from "./menuRoutes"
+import Layout from "../components/layout/Layout"
 
 const AppRouter = () => {
 
 
     return (
         <Routes>
-            <Route element={<NavBar />}>
-                {routes.map(({ id, path, Element }) => <Route key={id} path={path} element={<Element />} />)
+            <Route element={<Layout />}>
+                {routes.map(({ id, path, Element }) => (<Route key={id} path={path} element={<Element />} />))
 
                 }
             </Route>

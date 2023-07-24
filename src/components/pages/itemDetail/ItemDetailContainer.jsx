@@ -1,12 +1,15 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { products } from "../../../productsMock";
 import { useParams } from "react-router-dom";
+import { CartContext } from "../../../context/CartContext";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({});
 
   let { id } = useParams();
+
+  const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
     let promesa = new Promise((resolve, reject) => {
@@ -17,15 +20,16 @@ const ItemDetailContainer = () => {
     promesa.then((res) => setProduct(res)).catch((err) => console.log(err));
   }, [id]);
 
-  const agregarALCarrito = (cantidad) => {
+  const agregarAlCarrito = (cantidad) => {
     let data = {
       ...product,
       quantity: cantidad,
     };
-    console.log(data);
+
+    addToCart(data);
   };
 
-  return <ItemDetail product={product} agregarALCarrito={agregarALCarrito} />;
+  return <ItemDetail product={product} agregarAlCarrito={agregarAlCarrito} />;
 };
 
 export default ItemDetailContainer;

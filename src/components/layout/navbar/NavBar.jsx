@@ -6,7 +6,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import CartWidget from "../../common/cartWidget/CartWidget";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -34,7 +34,6 @@ const NavBar = () => {
           <CartWidget />
         </Toolbar>
       </AppBar>
-      <Outlet />
     </Box>
   );
 };
