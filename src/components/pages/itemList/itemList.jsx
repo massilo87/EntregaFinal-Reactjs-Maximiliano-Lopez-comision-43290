@@ -1,6 +1,10 @@
+import { Skeleton, Stack } from "@mui/material";
 import ProductCard from "../../common/productCard/ProductCard";
 
 const ItemList = ({ items }) => {
+
+  let arr = [1, 2, 3, 4, 5];
+
   return (
     <section
       style={{
@@ -12,9 +16,21 @@ const ItemList = ({ items }) => {
         gap: "20px",
       }}
     >
-      {items.map((item) => (
-        <ProductCard key={item.id} item={item} />
-      ))}
+
+      {
+        items.length > 0 ? items.map((item) => (
+          <ProductCard key={item.id} item={item} />
+        )) : arr.map((elemento) => (
+          <Stack spacing={1} key={elemento}>
+            {/* For variant="text", adjust the height via font-size */}
+            <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
+            {/* For other variants, adjust the size with `width` and `height` */}
+            <Skeleton variant="circular" width={40} height={40} />
+            <Skeleton variant="rectangular" width={210} height={60} />
+            <Skeleton variant="rounded" width={210} height={60} />
+          </Stack>
+        ))};
+
     </section>
   );
 };

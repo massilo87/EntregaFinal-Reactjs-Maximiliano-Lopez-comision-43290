@@ -2,11 +2,30 @@ import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
 import { Button } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
+import Swal from "sweetalert2";
 
 
 const CartContainer = () => {
 
   const { cart, clearCart, deleteById, getTotalPrice } = useContext(CartContext);
+
+  let vaciar = () => {
+    Swal.fire({
+      title: 'Seguro quieres vaciar el carrito?',
+      showDenyButton: true,
+      showCancelButton: false,
+      confirmButtonText: 'si, vaciar',
+      denyButtonText: `No vaciar`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        clearCart()
+        Swal.fire('Se eliminaron todos los productos!', '', 'success')
+      } else if (result.isDenied) {
+        Swal.fire('Productos conservados en el carrito', '', 'info')
+      }
+    })
+  }
 
   let total = getTotalPrice()
 
@@ -29,9 +48,17 @@ const CartContainer = () => {
         })
       }
 
-      <Button onClick={clearCart} variant="contained" color="secondary" size="small">Vaciar carrito</Button>
-      <h3>El total de tu compra es: ${total}</h3>
-      <Button variant="contained" color="success">Terminar compra</Button>
+      {
+        cart.length > 0 && (
+          <>
+            <Button onClick={vaciar} variant="contained" color="secondary" size="small">Vaciar carrito</Button>
+            <h3>El total de tu compra es: ${total}</h3>
+          </>
+        )}
+
+      {
+        cart.length > 0 ? <Button variant="contained" color="success">Terminar compra</Button> : <h3>El carrito esta vacio</h3>
+      }
     </div>
   );
 };
