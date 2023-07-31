@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 
 const CheckoutContainer = () => {
 
-  const { cart, getTotalPrice } = useContext(CartContext)
+  const { cart, getTotalPrice, clearCart } = useContext(CartContext)
 
   const [orderId, setOrderId] = useState("")
 
@@ -16,12 +16,22 @@ const CheckoutContainer = () => {
     name: "",
     phone: "",
     email: "",
+    confirmEmail: "",
   })
 
   const total = getTotalPrice()
 
   const handleSubmit = (evento) => {
     evento.preventDefault();
+
+    if (userData.email !== userData.confirmEmail) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Las direcciones de correo electrónico no coinciden.',
+      });
+      return;
+    }
 
 
     let order = {
@@ -53,14 +63,15 @@ const CheckoutContainer = () => {
       {!orderId ? (<form onSubmit={handleSubmit}>
         <input type="text" placeholder="ingrese su nombre" name="name" onChange={handleChange} />
         <input type="text" placeholder="ingrese su telefono" name="phone" onChange={handleChange} />
-        <input type="text" placeholder="ingrese su email" name="email" onChange={handleChange} />
+        <input type="text" placeholder="ingrese su email" name="email" value={userData.email} onChange={handleChange} />
+        <input type="text" placeholder="confirme su email" name="confirmEmail" value={userData.confirmEmail} onChange={handleChange} />
         <Button variant="contained" type="submit">Comprar</Button>
         <Link to="/cart"><Button variant="contained" type="button">Volver al carrito</Button></Link>
       </form>) : (Swal.fire({
         position: 'center',
         icon: 'success',
         title: 'Su orden de compra es:' + orderId,
-      }), <Navigate to="/" />)}
+      }), clearCart(), <Navigate to="/" />)}
 
     </div>
   )

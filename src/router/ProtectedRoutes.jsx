@@ -1,4 +1,4 @@
-import { Navigate, Outlet } from "react-router-dom"
+import { Navigate, Outlet } from "react-router-dom";
 
 
 const ProtectedRoutes = () => {
@@ -14,4 +14,4 @@ const ProtectedRoutes = () => {
     )
 }
 
-export default ProtectedRoutes
+export default ProtectedRoutes;
