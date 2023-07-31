@@ -3,6 +3,8 @@ import { CartContext } from "../../../context/CartContext";
 import { Button } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
+
 
 
 const CartContainer = () => {
@@ -17,7 +19,6 @@ const CartContainer = () => {
       confirmButtonText: 'si, vaciar',
       denyButtonText: `No vaciar`,
     }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         clearCart()
         Swal.fire('Se eliminaron todos los productos!', '', 'success')
@@ -57,7 +58,7 @@ const CartContainer = () => {
         )}
 
       {
-        cart.length > 0 ? <Button variant="contained" color="success">Terminar compra</Button> : <h3>El carrito esta vacio</h3>
+        cart.length > 0 ? <Link to="/checkout"><Button variant="contained" color="success">Terminar compra</Button></Link> : <h3>El carrito esta vacio</h3>
       }
     </div>
   );
