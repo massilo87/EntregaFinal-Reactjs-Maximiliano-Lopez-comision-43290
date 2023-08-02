@@ -5,6 +5,7 @@ import { CartContext } from "../../../context/CartContext";
 import { db } from "../../../firebaseConfig";
 import { addDoc, collection, serverTimestamp, updateDoc, doc } from "firebase/firestore";
 import Swal from "sweetalert2";
+import Checkout from "./Checkout";
 
 const CheckoutContainer = () => {
 
@@ -56,25 +57,8 @@ const CheckoutContainer = () => {
 
   }
 
-  return (
-    <div>
-      <h3>Checkout</h3>
+  return <Checkout clearCart={clearCart} orderId={orderId} handleSubmit={handleSubmit} handleChange={handleChange} userData={userData} />
 
-      {!orderId ? (<form onSubmit={handleSubmit}>
-        <input type="text" placeholder="ingrese su nombre" name="name" onChange={handleChange} />
-        <input type="text" placeholder="ingrese su telefono" name="phone" onChange={handleChange} />
-        <input type="text" placeholder="ingrese su email" name="email" value={userData.email} onChange={handleChange} />
-        <input type="text" placeholder="confirme su email" name="confirmEmail" value={userData.confirmEmail} onChange={handleChange} />
-        <Button variant="contained" type="submit">Comprar</Button>
-        <Link to="/cart"><Button variant="contained" type="button">Volver al carrito</Button></Link>
-      </form>) : (Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Su orden de compra es:' + orderId,
-      }), clearCart(), <Navigate to="/" />)}
-
-    </div>
-  )
 }
 
 export default CheckoutContainer;

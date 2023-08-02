@@ -3,7 +3,7 @@ import ProductCard from "../../common/productCard/ProductCard";
 
 const ItemList = ({ items }) => {
 
-  let arr = [1, 2, 3, 4, 5];
+  let arr = [1, 2, 3, 4];
 
   return (
     <section
@@ -12,8 +12,9 @@ const ItemList = ({ items }) => {
         display: "flex",
         justifyContent: "space-evenly",
         flexWrap: "wrap",
-        paddingTop: "50px",
-        gap: "20px",
+        paddingTop: "3.125rem",
+        gap: "3rem",
+        marginBottom: "4rem",
       }}
     >
 
@@ -22,10 +23,10 @@ const ItemList = ({ items }) => {
           <ProductCard key={item.id} item={item} />
         )) : arr.map((elemento) => (
           <Stack spacing={1} key={elemento}>
+            <Skeleton variant="rectangular" width={210} height={110} />
             <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
-            <Skeleton variant="circular" width={40} height={40} />
-            <Skeleton variant="rectangular" width={210} height={60} />
-            <Skeleton variant="rounded" width={210} height={60} />
+            <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
+            <Skeleton variant="rounded" width={105} height={30} />
           </Stack>
         ))};
 
