@@ -1,6 +1,5 @@
-import { Button } from "@mui/material";
+
 import { useContext, useState } from "react";
-import { Link, Navigate } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
 import { db } from "../../../firebaseConfig";
 import { addDoc, collection, serverTimestamp, updateDoc, doc } from "firebase/firestore";

@@ -19,6 +19,9 @@ const NavBar = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Impresiones 3D
           </Typography>
+          <Link to="/">
+            <Button color="inherit">Todos los productos</Button>
+          </Link>
           <Link to="/category/lamparas">
             <Button color="inherit">Lámparas</Button>
           </Link>

@@ -2,7 +2,7 @@ import { createContext, useState } from "react";
 
 export const CartContext = createContext();
 
-const CartContextCoponent = ({ children }) => {
+const CartContextComponent = ({ children }) => {
     const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) || []);
 
     const addToCart = (product) => {
@@ -77,4 +77,4 @@ const CartContextCoponent = ({ children }) => {
     )
 };
 
-export default CartContextCoponent;
+export default CartContextComponent;
