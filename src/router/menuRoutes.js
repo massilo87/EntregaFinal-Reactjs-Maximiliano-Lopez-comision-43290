@@ -1,15 +1,10 @@
+import ItemListContainer from "../components/pages/itemList/ItemListContainer";
+import ItemDetailContainer from "../components/pages/itemDetail/ItemDetailContainer";
+import CartContainer from "../components/pages/cart/CartContainer";
+import CheckoutContainer from "../components/pages/checkout/CheckoutContainer";
 
-import ItemListContainer from "../components/pages/itemList/ItemListContainer"
-import ItemDetailContainer from "../components/pages/itemDetail/ItemDetailContainer"
-import CartContainer from "../components/pages/cart/CartContainer"
-import CheckoutContainer from "../components/pages/checkout/CheckoutContainer"
-import Dashboard from "../components/pages/dashboard/Dashboard";
-
-export const routes =[
-    {id: "home",
-    path: "/",
-    Element: ItemListContainer,
-  },
+export const routes = [
+  { id: "home", path: "/", Element: ItemListContainer },
   {
     id: "category",
     path: "/category/:categoryName",

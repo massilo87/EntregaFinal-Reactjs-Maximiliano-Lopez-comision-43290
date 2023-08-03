@@ -8,18 +8,18 @@ import Checkout from "./Checkout";
 
 const CheckoutContainer = () => {
 
-  const { cart, getTotalPrice, clearCart } = useContext(CartContext)
+  const { cart, getTotalPrice, clearCart } = useContext(CartContext);
 
-  const [orderId, setOrderId] = useState("")
+  const [orderId, setOrderId] = useState("");
 
   const [userData, setUserData] = useState({
     name: "",
     phone: "",
     email: "",
     confirmEmail: "",
-  })
+  });
 
-  const total = getTotalPrice()
+  const total = getTotalPrice();
 
   const handleSubmit = (evento) => {
     evento.preventDefault();
@@ -39,10 +39,11 @@ const CheckoutContainer = () => {
       items: cart,
       total,
       date: serverTimestamp()
-    }
+    };
+
     //CREAR ORDEN DE COMPRA
-    let ordersCollections = collection(db, "orders")
-    addDoc(ordersCollections, order).then(resp => setOrderId(resp.id))
+    let ordersCollections = collection(db, "orders");
+    addDoc(ordersCollections, order).then(resp => setOrderId(resp.id));
 
     //MODIFICAR STOCK DE PRODUCTOS EN DB
     cart.forEach((elemento) => {
@@ -54,7 +55,7 @@ const CheckoutContainer = () => {
   const handleChange = (evento) => {
     setUserData({ ...userData, [evento.target.name]: evento.target.value })
 
-  }
+  };
 
   return <Checkout clearCart={clearCart} orderId={orderId} handleSubmit={handleSubmit} handleChange={handleChange} userData={userData} />
 

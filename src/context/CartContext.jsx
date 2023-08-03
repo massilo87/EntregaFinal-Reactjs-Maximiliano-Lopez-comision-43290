@@ -16,7 +16,7 @@ const CartContextComponent = ({ children }) => {
                 } else {
                     return elemento
                 }
-            })
+            });
 
             localStorage.setItem("cart", JSON.stringify(newArr));
             setCart(newArr);
@@ -25,11 +25,11 @@ const CartContextComponent = ({ children }) => {
             localStorage.setItem("cart", JSON.stringify([...cart, product]))
             setCart([...cart, product])
         }
-    }
+    };
 
     const clearCart = () => {
         localStorage.removeItem("cart")
-        setCart([]);
+        setCart([])
     };
 
     const deleteById = (id) => {
@@ -39,6 +39,7 @@ const CartContextComponent = ({ children }) => {
         setCart(newArr);
     };
 
+    //Total de cantidades
     const getTotalQuantity = () => {
 
         let total = cart.reduce((acc, elemento) => {
@@ -47,6 +48,7 @@ const CartContextComponent = ({ children }) => {
         return total
     };
 
+    //Precio total
     const getTotalPrice = () => {
 
         let total = cart.reduce((acc, elemento) => {
@@ -54,11 +56,11 @@ const CartContextComponent = ({ children }) => {
         }, 0)
         return total
     };
-
+    //Cantidad por id
     const getQuantityById = (id) => {
         let producto = cart.find((elemento) => elemento.id === +id)
         return producto?.quantity
-    }
+    };
 
     let data = {
         cart,

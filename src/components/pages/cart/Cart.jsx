@@ -7,7 +7,7 @@ const Cart = ({ cart, deleteById, vaciar, total }) => {
 
     return (
         <div>
-            <h1>Estos son los articulos que cargaste en el carrito</h1>
+            <h1>Estos son los artículos que cargaste en el carrito</h1>
             {cart.map((elemento) => {
 
                 return (
@@ -36,7 +36,7 @@ const Cart = ({ cart, deleteById, vaciar, total }) => {
 
             <div className="btnTerminar">
                 {
-                    cart.length > 0 ? <Link to="/checkout"><Button variant="contained" color="success">Terminar compra</Button></Link> : <div><h3>El carrito está vacío</h3><img src="https://res.cloudinary.com/dwiiarrki/image/upload/v1690947612/sad-rounded-square-emoticon_obkntg.png" alt="sad" height="150px" /></div>
+                    cart.length > 0 ? <Link to="/checkout"><Button variant="contained" color="success">Terminar compra</Button></Link> : <div><h3>Ups!!! El carrito está vacío</h3><img src="https://res.cloudinary.com/dwiiarrki/image/upload/v1690947612/sad-rounded-square-emoticon_obkntg.png" alt="sad" height="150px" /></div>
                 }
             </div>
         </div >
