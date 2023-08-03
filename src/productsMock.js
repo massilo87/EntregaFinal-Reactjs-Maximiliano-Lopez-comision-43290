@@ -1,6 +1,5 @@
 export const products = [
   {
-    id: 1,
     title: "Lámpara simple",
     price: 1500,
     stock: 4,
@@ -9,7 +8,6 @@ export const products = [
     img: "https://res.cloudinary.com/dwiiarrki/image/upload/v1688421305/images_n6dnyi.jpg",
   },
   {
-    id: 2,
     title: "Lámpara custom",
     price: 2500,
     stock: 5,
@@ -18,7 +16,6 @@ export const products = [
     img: "https://res.cloudinary.com/dwiiarrki/image/upload/v1688421383/D_NQ_NP_810960-MLA42876364358_072020-O_xwzvqt.webp",
   },
   {
-    id: 3,
     title: "Maceta pequeña",
     price: 500,
     stock: 7,
@@ -28,7 +25,6 @@ export const products = [
   },
 
   {
-    id: 4,
     title: "Maceta de jardín",
     price: 1000,
     stock: 5,
@@ -37,7 +33,6 @@ export const products = [
     img: "https://res.cloudinary.com/dwiiarrki/image/upload/v1688421530/il_1588xN.2321570558_duun-768x1024_idiyin.jpg",
   },
   {
-    id: 5,
     title: "Tags para mascotas",
     price: 1000,
     stock: 15,
@@ -46,7 +41,6 @@ export const products = [
     img: "https://res.cloudinary.com/dwiiarrki/image/upload/v1688829055/D_NQ_NP_679504-MLM45201193903_032021-O_brvepp.webp",
   },
   {
-    id: 6,
     title: "Tags para mascotas",
     price: 500,
     stock: 25,
@@ -55,7 +49,6 @@ export const products = [
     img: "https://res.cloudinary.com/dwiiarrki/image/upload/v1688828882/collage_aquett.jpg",
   },
   {
-    id: 7,
     title: "Llaveros premium",
     price: 400,
     stock: 10,
@@ -64,7 +57,6 @@ export const products = [
     img: "https://res.cloudinary.com/dwiiarrki/image/upload/v1688828915/D_NQ_NP_654943-MLA48939845780_012022-O_t4g23m.webp",
   },
   {
-    id: 8,
     title: "Llaveros",
     price: 200,
     stock: 12,

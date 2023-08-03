@@ -1,7 +1,7 @@
 import CounterContainer from "../../common/counter/CounterContainer";
 import "./ItemDetail.css";
 
-const ItemDetail = ({ product, agregarALCarrito }) => {
+const ItemDetail = ({ product, agregarAlCarrito, cantidadEnCarrito }) => {
   return (
     <div className="detail">
       <img src={product.img} />
@@ -10,8 +10,9 @@ const ItemDetail = ({ product, agregarALCarrito }) => {
       <h3>${product.price}</h3>
 
       <CounterContainer
+        cantidadEnCarrito={cantidadEnCarrito}
         stock={product.stock}
-        agregarALCarrito={agregarALCarrito}
+        agregarAlCarrito={agregarAlCarrito}
       />
     </div>
   );
